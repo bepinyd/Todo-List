@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:monospace;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg,#f2aa45,#c14cef);
+   position:absolute;
+   display: flex;
+   align-items: center;
+    
+}
+
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background-color: antiquewhite;
+    margin: 100px auto 70px;
+    padding: 40px 30px 70px;
+    border-radius: 30px;
+}
+h2{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 30px;
+}
+
+.todo-app h2 img{
+    height: 40px;
+    width: 40px;
+}
+
+.add-list{
+    margin: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(221, 223, 222);
+    border-radius: 30px;
+}
+
+.add-list input{
+    flex: 1;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border-radius: 30px;
+    font-size: 16px;
+}
+.add-list button{
+    padding: 15px 40px;
+    background-color: rgb(255, 118, 54);
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+   width: 28px;
+   border-radius: 50%;
+   background-image: url(images/unchecked.png);
+   background-size: cover;
+   background-position: center;
+   top: 8px;
+   left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    height: 20px;
+    width:20px;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    color: #555;
+    
+    font-size: 18px;
+
+}
+
+ul li span:hover{
+    background-color: #555;
+    color: rgb(240, 60, 60);
+    border-radius: 50%;
+}
+
+@media only screen  and (max-width:530px){
+    .container{
+        background: background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        
+    }
+    .todo-app{
+        margin: 0;
+        border-radius: 0%;
+        background: transparent;
+    }
+    .add-list{
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: transparent;
+        gap: 13px;
+        
+    }
+    .add-list input{
+        background-color: #cdc6c6;
+        padding: 20px 20px;
+    }
+}
